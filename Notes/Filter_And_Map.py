@@ -11,5 +11,5 @@ print(list(filtered))
 # returns a tuple
 maped = map(lambda x: x % 2 == 0, a)
 
-#prints maped as a list
+# prints maped as a list
 print(list(maped))
