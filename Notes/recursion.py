@@ -4,7 +4,7 @@ def factorial(a):
         return 1
 
     elif a < 0:
-        return ArithmeticError
+        return 'No Solution.'
 
     else:
         return a * (factorial(a - 1))
