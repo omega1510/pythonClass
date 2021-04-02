@@ -1,4 +1,4 @@
-# Python_Class
+# pythonClass
 The repository where I store all my Computer Science homework and notes.
 
 There is only one rule, and that is:
