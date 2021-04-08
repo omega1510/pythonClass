@@ -26,7 +26,10 @@ del dictionary1["number"]
 # students, {‘Name’: ‘Ahmad’,’Age’:5}
 
 dictionary2 = {
-    "subjects": ["math", "english"],
+    "subjects": [
+        "math",
+        "english",
+    ],
     "students": {
         "Name": "Ahmad",
         "Age": 5,
