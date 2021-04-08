@@ -2,7 +2,7 @@ companyProfile = {
     "name": "Tesla",
     "ticker": "TSLA",
     "number of employees": 45000,
-    "founded": "July 1, 2003"
+    "founded": "July 1, 2003",
 }
 print("Getting value of founded:")
 print(companyProfile["founded"])

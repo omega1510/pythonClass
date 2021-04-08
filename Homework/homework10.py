@@ -27,7 +27,10 @@ del dictionary1["number"]
 
 dictionary2 = {
     "subjects": ["math", "english"],
-    "students": {"Name": "Ahmad", "Age": 5},
+    "students": {
+        "Name": "Ahmad",
+        "Age": 5,
+    },
 }
 
 for key, value in dictionary2.items():
