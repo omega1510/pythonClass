@@ -19,7 +19,7 @@ except JSONDecodeError:
 
 
 def welcome():
-    type("Welcome to a brand new address book!\n")
+
     type("Here is the menu:")
     type("1. View the address book")
     type("2. Insert a new entry")
@@ -27,7 +27,6 @@ def welcome():
     type("4. Quit the program\n")
 
     type("Choose an option:")
-    welcomeMenu = input("> ")
 
 
 def save():
@@ -57,3 +56,63 @@ def option2():
 
     information.update(student)
     save()
+
+
+# init
+type("\nWelcome to a brand new address book!\n")
+while True:
+
+    welcome()
+    welcomeMenu = input("> ")
+    if welcomeMenu == "1":
+        option1()
+
+        while True:
+            type("\n\nWould you like to go back to the main menu? (y/n)")
+            choice = input("> ")
+            choice = choice.lower()
+
+            if choice == "y":
+                print("\n\n")
+                break
+            else:
+                sleep(5)
+                continue
+        continue
+
+    elif welcomeMenu == "2":
+        option2()
+
+        while True:
+            type("\n\nWould you like to go back to the main menu? (y/n)")
+            choice = input("> ")
+            choice = choice.lower()
+
+            if choice == "y":
+                print("\n\n")
+                break
+            else:
+                sleep(5)
+                continue
+        continue
+
+    elif welcomeMenu == "3":
+        pass
+
+        while True:
+            type("\n\nWould you like to go back to the main menu? (y/n)")
+            choice = input("> ")
+            choice = choice.lower()
+
+            if choice == "y":
+                print("\n\n")
+                break
+            else:
+                sleep(5)
+                continue
+        continue
+
+    elif welcomeMenu == "4":
+        exit()
+    else:
+        type("Thats not an option!")
