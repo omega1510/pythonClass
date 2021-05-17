@@ -1,3 +1,4 @@
+from os import system, name
 from time import sleep
 import json
 
@@ -5,8 +6,18 @@ import json
 def type(message):
     for i in message:
         print(i, flush=True, end="")
+
         sleep(0.02)
     print("")  # newline
+
+
+def clear():
+
+    if name == "nt":
+        _ = system("cls")
+
+    else:
+        _ = system("clear")
 
 
 try:
@@ -40,8 +51,8 @@ def option1():
         type("The address book is empty. Populate it with data first!")
 
     else:
-        for person in information.values():
-            type(str(person["Name"] + " : " + person["Address"]))
+        for key, person in information.items():
+            type(str(key + ". " + person["Name"] + " : " + person["Address"]))
 
 
 def option2():
@@ -54,62 +65,67 @@ def option2():
     number = len(information.keys()) + 1
     student = {number: {"Name": name, "Address": address}}
 
-    information.update(student)
-    save()
+    try:
+        information.update(student)
+        save()
+        print("The student was successfully added!")
+    except:
+        print("An unknown error occurred. Please try again later.")
+
+
+def option3():
+    for key, person in information.items():
+        type(str(key + ". " + person["Name"] + " : " + person["Address"]))
+
+    type("\n\nType the number of the student you would like to remove:")
+    num = input("> ")
+
+    try:
+        del information[num]
+    except:
+        type("That student doesn't exist!")
+
+
+def returnMenu():
+    while True:
+        type("\n\nWould you like to go back to the main menu? (y/n)")
+        choice = input("> ")
+        choice = choice.lower()
+
+        if choice == "y":
+            print("\n\n")
+            clear()
+            break
+        else:
+            sleep(5)
+            continue
 
 
 # init
-type("\nWelcome to a brand new address book!\n")
-while True:
 
+
+while True:
+    clear()
+    type("\nWelcome to a brand new address book!\n")
     welcome()
     welcomeMenu = input("> ")
+    clear()
     if welcomeMenu == "1":
         option1()
 
-        while True:
-            type("\n\nWould you like to go back to the main menu? (y/n)")
-            choice = input("> ")
-            choice = choice.lower()
-
-            if choice == "y":
-                print("\n\n")
-                break
-            else:
-                sleep(5)
-                continue
+        returnMenu()
         continue
 
     elif welcomeMenu == "2":
         option2()
 
-        while True:
-            type("\n\nWould you like to go back to the main menu? (y/n)")
-            choice = input("> ")
-            choice = choice.lower()
-
-            if choice == "y":
-                print("\n\n")
-                break
-            else:
-                sleep(5)
-                continue
+        returnMenu()
         continue
 
     elif welcomeMenu == "3":
-        pass
+        option3()
 
-        while True:
-            type("\n\nWould you like to go back to the main menu? (y/n)")
-            choice = input("> ")
-            choice = choice.lower()
-
-            if choice == "y":
-                print("\n\n")
-                break
-            else:
-                sleep(5)
-                continue
+        returnMenu()
         continue
 
     elif welcomeMenu == "4":
