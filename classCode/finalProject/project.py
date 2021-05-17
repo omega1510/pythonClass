@@ -1,9 +1,11 @@
-from os import system, name
-from time import sleep
-import json
+#!usr/bin/env python3
+
+from os import system, name  # for screen clearing
+from time import sleep  # for typewriter effect
+import json  # for saving the address book
 
 
-def type(message):
+def type(message):  # same as print, but does a cool typewriter effect
     for i in message:
         print(i, flush=True, end="")
 
@@ -11,7 +13,7 @@ def type(message):
     print("")  # newline
 
 
-def clear():
+def clear():  # cleares the screen
 
     if name == "nt":
         _ = system("cls")
@@ -20,42 +22,82 @@ def clear():
         _ = system("clear")
 
 
-try:
+class format:  # class for colorized output
+    reset = "\033[0m"
+    bold = "\033[01m"
+    disable = "\033[02m"
+    underline = "\033[04m"
+    reverse = "\033[07m"
+    strikethrough = "\033[09m"
+    invisible = "\033[08m"
+
+    class fg:
+        black = "\033[30m"
+        red = "\033[31m"
+        green = "\033[32m"
+        orange = "\033[33m"
+        blue = "\033[34m"
+        purple = "\033[35m"
+        cyan = "\033[36m"
+        lightgrey = "\033[37m"
+        darkgrey = "\033[90m"
+        lightred = "\033[91m"
+        lightgreen = "\033[92m"
+        yellow = "\033[93m"
+        lightblue = "\033[94m"
+        pink = "\033[95m"
+        lightcyan = "\033[96m"
+
+    class bg:
+        black = "\033[40m"
+        red = "\033[41m"
+        green = "\033[42m"
+        orange = "\033[43m"
+        blue = "\033[44m"
+        purple = "\033[45m"
+        cyan = "\033[46m"
+        lightgrey = "\033[47m"
+
+
+try:  # tries to save data
     data = open("database.json", "r")
     information = json.load(data)
     data.close()
-
-except JSONDecodeError:
+except:  # returns empty dict if database.json is empty
     information = {}
 
 
-def welcome():
+def welcome():  # main menu
 
     type("Here is the menu:")
-    type("1. View the address book")
-    type("2. Insert a new entry")
-    type("3. Delete an entry")
-    type("4. Quit the program\n")
+    type(format.fg.green + "1. " + format.reset + "View the address book")
+    type(format.fg.green + "2. " + format.reset + "Insert a new entry")
+    type(format.fg.green + "3. " + format.reset + "Delete an entry")
+    type(format.fg.green + "4. " + format.reset + "Quit the program\n")
 
     type("Choose an option:")
 
 
-def save():
+def save():  # function to save the address book
     data = open("database.json", "w")
     json.dump(information, data)
     data.close()
 
 
-def option1():
+def nicePrint():  # nicely prints menu
+    for index, person in information.items():
+        type(str(index + ". " + person["Name"] + " : " + person["Address"]))
+
+
+def option1():  # view database
     if len(information) == 0:
         type("The address book is empty. Populate it with data first!")
 
     else:
-        for key, person in information.items():
-            type(str(key + ". " + person["Name"] + " : " + person["Address"]))
+        nicePrint()
 
 
-def option2():
+def option2():  # add a new entry
     type("What is the new student's name?")
     name = input("> ")
 
@@ -65,17 +107,26 @@ def option2():
     number = len(information.keys()) + 1
     student = {number: {"Name": name, "Address": address}}
 
+    save = True
+
     try:
-        information.update(student)
-        save()
-        print("The student was successfully added!")
+
+        for value in information.values():
+            if value["Name"] == name:
+                print(format.fg.red + "That student already exists!" + format.reset)
+                save = False
+                break
+
+        if save == True:
+            information.update(student)
+            save()
+            print("The student was successfully added!")
     except:
-        print("An unknown error occurred. Please try again later.")
+        print("An unknown error occurred or the database. Please try again later.")
 
 
-def option3():
-    for key, person in information.items():
-        type(str(key + ". " + person["Name"] + " : " + person["Address"]))
+def option3():  # remove an entry
+    nicePrint()
 
     type("\n\nType the number of the student you would like to remove:")
     num = input("> ")
@@ -83,10 +134,10 @@ def option3():
     try:
         del information[num]
     except:
-        type("That student doesn't exist!")
+        type(format.fg.red + "That student doesn't exist!" + format.reset)
 
 
-def returnMenu():
+def returnMenu():  # return to the main menu with cooldown
     while True:
         type("\n\nWould you like to go back to the main menu? (y/n)")
         choice = input("> ")
@@ -101,12 +152,15 @@ def returnMenu():
             continue
 
 
-# init
-
-
-while True:
+while True:  # init loop
     clear()
-    type("\nWelcome to a brand new address book!\n")
+    type(
+        format.bold
+        + format.underline
+        + "\nWelcome to a brand new address book!\n"
+        + format.reset
+    )
+
     welcome()
     welcomeMenu = input("> ")
     clear()
@@ -131,4 +185,4 @@ while True:
     elif welcomeMenu == "4":
         exit()
     else:
-        type("Thats not an option!")
+        type(format.fg.red + "Thats not an option!" + format.reset)
