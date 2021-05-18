@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 from os import system, name  # for screen clearing
 from time import sleep  # for typewriter effect
 import json  # for saving the address book
@@ -64,7 +63,7 @@ try:  # tries to save data
     data = open("database.json", "r")
     information = json.load(data)
     data.close()
-except:  # returns empty dict if database.json is empty
+except:  # returns empty dict if database.json is empty or fails read
     information = {}
 
 

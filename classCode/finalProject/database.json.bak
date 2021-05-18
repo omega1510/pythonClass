@@ -1,1 +1,1 @@
-{"1": {"Name": "Hayaan", "Address": "123 Example St, Fremont CA"}, "2": {"Name": "Isa", "Address": "359 Random Ct, Milpitas CA"}, "3": {"Name": "Ali Akbar", "Address": "294 Something Ave, Morgan Hill CA"}}
+{"Hayaan": "123 Example St, Fremont CA", "Isa": "359 Random Ct, Milpitas CA", "Ali Akbar": "294 Something Ave, Morgan Hill CA"}
