@@ -80,9 +80,22 @@ def welcome():  # main menu
 
 
 def save():  # function to save the address book
-    data = open("database.json", "w")
-    json.dump(information, data)
-    data.close()
+    try:
+        data = open("database.json", "w")
+        json.dump(information, data)
+        data.close()
+    except:
+        type(
+            format.fg.red
+            + "Saving your changes failed in the background! Make sure a file called "
+            + format.reset
+            + format.fg.yellow
+            + "database.json "
+            + format.reset
+            + format.fg.red
+            + "exists in the same directory as the main program."
+            + format.reset
+        )
 
 
 def nicePrint():  # nicely prints menu
