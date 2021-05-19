@@ -73,7 +73,8 @@ def welcome():  # main menu
     type(format.fg.green + "1. " + format.reset + "View the address book")
     type(format.fg.green + "2. " + format.reset + "Insert a new entry")
     type(format.fg.green + "3. " + format.reset + "Delete an entry")
-    type(format.fg.green + "4. " + format.reset + "Quit the program\n")
+    type(format.fg.green + "4. " + format.reset + "Edit an entry")
+    type(format.fg.green + "5. " + format.reset + "Quit the program\n")
 
     type("Choose an option:")
 
@@ -154,6 +155,22 @@ def option3():  # remove an entry
         type(format.fg.red + "That student doesn't exist!" + format.reset)
 
 
+def option4():
+    nicePrint()
+
+    type("\n\nType the name of the student you would like to edit:")
+    studentname = input("> ")
+
+    if studentname in information.keys():
+        type("\n\nType the new address:")
+        newAddress = input("> ")
+        information[studentname] = newAddress
+        save()
+        type(format.fg.green + "The student was successfully edited!" + format.reset)
+    else:
+        type(format.fg.red + "That student doesn't exist!" + format.reset)
+
+
 def returnMenu():  # return to the main menu with cooldown
     while True:
         type("\n\nWould you like to go back to the main menu? (y/n)")
@@ -169,20 +186,21 @@ def returnMenu():  # return to the main menu with cooldown
             continue
 
 
-type(
-    format.bold
-    + format.underline
-    + "\nWelcome to a brand new address book!\n"
-    + format.reset
-)
-
 while True:  # init loop
     clear()
+
+    type(
+        format.bold
+        + format.underline
+        + "\nWelcome to a brand new address book!\n"
+        + format.reset
+    )
 
     welcome()
     welcomeMenu = input("> ")
     clear()
     if welcomeMenu == "1":
+
         option1()
 
         returnMenu()
@@ -196,13 +214,23 @@ while True:  # init loop
         continue
 
     elif welcomeMenu == "3":
+
         option3()
 
         returnMenu()
         continue
 
     elif welcomeMenu == "4":
+
+        option4()
+
+        returnMenu()
+        continue
+
+    elif welcomeMenu == "5":
+
         exit()
+
     else:
         type(format.fg.red + "Thats not an option!" + format.reset)
         sleep(5)
