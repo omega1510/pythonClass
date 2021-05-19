@@ -1,3 +1,7 @@
+from functools import cache
+
+
+@cache
 def factorial(a):
 
     if a == 0 or a == 1:
@@ -10,6 +14,4 @@ def factorial(a):
         return a * (factorial(a - 1))
 
 
-num = 4
-
-print(factorial(num))
+print(factorial(4))
