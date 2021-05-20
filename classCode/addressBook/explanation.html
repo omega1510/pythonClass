@@ -1,10 +1,14 @@
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <title>Address Book</title>
-      <style>
-        #wrapper {width: 960px; margin: 0 auto;}
-        /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="author" content="By Hayaan Rizvi">
+<title>Address Book</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -43,7 +47,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -58,10 +62,8 @@ img{-ms-interpolation-mode:bicubic}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
-.center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
 a{color:#2156a5;text-decoration:underline;line-height:inherit}
 a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
@@ -92,28 +94,28 @@ dl dd{margin-bottom:1.25em}
 abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
 abbr{text-transform:none}
 blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
-blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
-blockquote cite::before{content:"\2014 \0020"}
-blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
 blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 @media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}
-table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
 table thead,table tfoot{background:#f7f8f7}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt{background:#f8f8f7}
-table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
 .clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
 .clearfix::after,.float-group::after{clear:both}
-:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-:not(pre)>code.nobreak{word-wrap:normal}
-:not(pre)>code.nowrap{white-space:nowrap}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
 pre>code{display:block}
@@ -178,7 +180,7 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
-#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 #content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
@@ -201,7 +203,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
 .exampleblock>.content>:first-child{margin-top:0}
@@ -211,7 +213,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
 .exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
@@ -236,7 +238,7 @@ table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;pad
 pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
 pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
 .quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
@@ -253,24 +255,24 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
 .quoteblock.abstract{margin:0 1em 1.25em;display:block}
 .quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
-.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
-table.tableblock{max-width:100%;border-collapse:separate}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
 p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
 td.tableblock>.content>:last-child{margin-bottom:-1.25em}
-td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
-table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
-table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
-table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
-table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
 table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
 table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
 table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
@@ -279,7 +281,7 @@ th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
 table thead th,table tfoot th{font-weight:bold}
-tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th{background:#f7f8f7}
 tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
@@ -308,6 +310,7 @@ ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
 .colist td:not([class]):first-child img{max-width:none}
@@ -380,7 +383,7 @@ a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
 .conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
 .conum[data-value]::after{content:attr(data-value)}
@@ -407,6 +410,7 @@ thead{display:table-header-group}
 svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
 #toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
 body.book #header{text-align:center}
@@ -429,448 +433,428 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-
-      </style>
-      <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/asciidoc.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/yaml.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/dockerfile.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/makefile.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/go.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/rust.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/haskell.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/typescript.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/scss.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/less.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/handlebars.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/groovy.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/scala.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/bash.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/ini.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script>
-    </head>
-    <body>
-      <div id="wrapper">
-        <div class="article">
-          <div class="sect1">
-<h2 id="_welcome_to_a_brand_new_address_book">Welcome to a brand new address book!</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_by_hayaan_rizvi">By Hayaan Rizvi</h3>
-<div id="__asciidoctor-preview-1__" class="paragraph">
-<p>A great way to store the address of any student you want! The feature
-that sets this project apart from the others is that it will store and
-save you changes in an external database. If you add, edit, or delete a
-student you can close the program and come back later to continue your
-work.</p>
+</style>
+<style>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+pre.pygments .hll { background-color: #ffffcc }
+pre.pygments { background: #f8f8f8; }
+pre.pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+pre.pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+pre.pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+pre.pygments .tok-o { color: #666666 } /* Operator */
+pre.pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+pre.pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+pre.pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+pre.pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+pre.pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+pre.pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+pre.pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+pre.pygments .tok-ge { font-style: italic } /* Generic.Emph */
+pre.pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+pre.pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+pre.pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+pre.pygments .tok-go { color: #888888 } /* Generic.Output */
+pre.pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+pre.pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+pre.pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+pre.pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+pre.pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+pre.pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+pre.pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+pre.pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+pre.pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+pre.pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+pre.pygments .tok-m { color: #666666 } /* Literal.Number */
+pre.pygments .tok-s { color: #BA2121 } /* Literal.String */
+pre.pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+pre.pygments .tok-nb { color: #008000 } /* Name.Builtin */
+pre.pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+pre.pygments .tok-no { color: #880000 } /* Name.Constant */
+pre.pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+pre.pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+pre.pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+pre.pygments .tok-nf { color: #0000FF } /* Name.Function */
+pre.pygments .tok-nl { color: #A0A000 } /* Name.Label */
+pre.pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+pre.pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+pre.pygments .tok-nv { color: #19177C } /* Name.Variable */
+pre.pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+pre.pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+pre.pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+pre.pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+pre.pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+pre.pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+pre.pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+pre.pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+pre.pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+pre.pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+pre.pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+pre.pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+pre.pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+pre.pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+pre.pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+pre.pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+pre.pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+pre.pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+pre.pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+pre.pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+pre.pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+pre.pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+pre.pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+pre.pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+pre.pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+pre.pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h2>Welcome to a brand new address book!</h2>
+<div class="details">
+<h4>By Hayaan Rizvi</h4><br>
 </div>
-<div id="__asciidoctor-preview-2__" class="paragraph">
-<p><em>Make sure to include both <code>project.py</code> and <code>database.json</code> in the same
-directory before running the script. I have preloaded some data on there
-for you :)</em></p>
 </div>
-<div id="__asciidoctor-preview-3__" class="paragraph">
+<div id="content">
+<div class="paragraph">
+<p>A great way to store the address of any student you want! The feature that sets this project apart from the others is that it will store and save your changes in an external database. If you add, edit, or delete a student you can close the program and come back later to continue your work.</p>
+</div>
+<div class="paragraph">
+<p><em>Make sure to include both <code>project.py</code> and <code>database.json</code> in the same directory before running the script. I have preloaded some data on there for you :)</em></p>
+</div>
+<div class="paragraph">
 <p>First we can write a shebang:</p>
 </div>
-<div id="__asciidoctor-preview-4__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-5__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">#!/usr/bin/env python3</code></pre>
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-ch">#!/usr/bin/env python3</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-6__" class="paragraph">
+<div class="paragraph">
 <p>Then import packages:</p>
 </div>
-<div id="__asciidoctor-preview-7__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-8__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">from os import system, name
-from IPython.display import clear_output # to work in Jupyter
-from time import sleep
-import json</code></pre>
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-kn">from</span> <span class="tok-nn">os</span> <span class="tok-kn">import</span> <span class="tok-n">system</span><span class="tok-p">,</span> <span class="tok-n">name</span>
+<span class="tok-kn">from</span> <span class="tok-nn">IPython.display</span> <span class="tok-kn">import</span> <span class="tok-n">clear_output</span> <span class="tok-c1"># to work in Jupyter</span>
+<span class="tok-kn">from</span> <span class="tok-nn">time</span> <span class="tok-kn">import</span> <span class="tok-n">sleep</span>
+<span class="tok-kn">import</span> <span class="tok-nn">json</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-9__" class="paragraph">
+<div class="paragraph">
 <p>Create a function for a cool typewriter effect:</p>
 </div>
-<div id="__asciidoctor-preview-10__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-11__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def type(message):
-    for i in message:
-        print(i, flush=True, end="")
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">type</span><span class="tok-p">(</span><span class="tok-n">message</span><span class="tok-p">):</span>
+    <span class="tok-k">for</span> <span class="tok-n">i</span> <span class="tok-ow">in</span> <span class="tok-n">message</span><span class="tok-p">:</span>
+        <span class="tok-nb">print</span><span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-p">,</span> <span class="tok-n">flush</span><span class="tok-o">=</span><span class="tok-kc">True</span><span class="tok-p">,</span> <span class="tok-n">end</span><span class="tok-o">=</span><span class="tok-s2">""</span><span class="tok-p">)</span>
 
-        sleep(0.02)
-    print("")  # newline</code></pre>
+        <span class="tok-n">sleep</span><span class="tok-p">(</span><span class="tok-mf">0.02</span><span class="tok-p">)</span>
+    <span class="tok-nb">print</span><span class="tok-p">(</span><span class="tok-s2">""</span><span class="tok-p">)</span>  <span class="tok-c1"># newline</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-12__" class="paragraph">
+<div class="paragraph">
 <p>Create a function to clear the screen:</p>
 </div>
-<div id="__asciidoctor-preview-13__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-14__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def clear():
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">clear</span><span class="tok-p">():</span>
 
-    if name == "nt":
-        _ = system("cls")
+    <span class="tok-k">if</span> <span class="tok-n">name</span> <span class="tok-o">==</span> <span class="tok-s2">"nt"</span><span class="tok-p">:</span>
+        <span class="tok-n">_</span> <span class="tok-o">=</span> <span class="tok-n">system</span><span class="tok-p">(</span><span class="tok-s2">"cls"</span><span class="tok-p">)</span>
 
-    else:
-        _ = system("clear")
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-n">_</span> <span class="tok-o">=</span> <span class="tok-n">system</span><span class="tok-p">(</span><span class="tok-s2">"clear"</span><span class="tok-p">)</span>
 
-    clear_output(wait=True) # for Jupyter, returns nothing in python@3.9</code></pre>
+    <span class="tok-n">clear_output</span><span class="tok-p">(</span><span class="tok-n">wait</span><span class="tok-o">=</span><span class="tok-kc">True</span><span class="tok-p">)</span> <span class="tok-c1"># for Jupyter, returns nothing in python@3.9</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-15__" class="paragraph">
-<p>A class of Ascii color codes can be used in place of an external module
-to get colorized and formatted text in terminals that support it. If a
-terminal doesn’t support it, then it just prints normal text because of
-the <code>\</code> escape character. Usage is
-<code>print (format.fg.red + format.bold + "Message" + format.reset)</code>.</p>
+<div class="paragraph">
+<p>A class of Ascii color codes can be used in place of an external module to get colorized and formatted text in terminals that support it. If a terminal doesn’t support it, then it just prints normal text because of the <code>\</code> escape character. Usage is <code>print (format.fg.red + format.bold + "Message" + format.reset)</code>.</p>
 </div>
-<div id="__asciidoctor-preview-16__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-17__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">class format:
-    reset = "\033[0m"
-    bold = "\033[01m"
-    disable = "\033[02m"
-    underline = "\033[04m"
-    reverse = "\033[07m"
-    strikethrough = "\033[09m"
-    invisible = "\033[08m"
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">class</span> <span class="tok-nc">format</span><span class="tok-p">:</span>
+    <span class="tok-n">reset</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[0m"</span>
+    <span class="tok-n">bold</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[01m"</span>
+    <span class="tok-n">disable</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[02m"</span>
+    <span class="tok-n">underline</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[04m"</span>
+    <span class="tok-n">reverse</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[07m"</span>
+    <span class="tok-n">strikethrough</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[09m"</span>
+    <span class="tok-n">invisible</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[08m"</span>
 
-    class fg:
-        black = "\033[30m"
-        red = "\033[31m"
-        green = "\033[32m"
-        orange = "\033[33m"
-        blue = "\033[34m"
-        purple = "\033[35m"
-        cyan = "\033[36m"
-        lightgrey = "\033[37m"
-        darkgrey = "\033[90m"
-        lightred = "\033[91m"
-        lightgreen = "\033[92m"
-        yellow = "\033[93m"
-        lightblue = "\033[94m"
-        pink = "\033[95m"
-        lightcyan = "\033[96m"
+    <span class="tok-k">class</span> <span class="tok-nc">fg</span><span class="tok-p">:</span>
+        <span class="tok-n">black</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[30m"</span>
+        <span class="tok-n">red</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[31m"</span>
+        <span class="tok-n">green</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[32m"</span>
+        <span class="tok-n">orange</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[33m"</span>
+        <span class="tok-n">blue</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[34m"</span>
+        <span class="tok-n">purple</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[35m"</span>
+        <span class="tok-n">cyan</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[36m"</span>
+        <span class="tok-n">lightgrey</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[37m"</span>
+        <span class="tok-n">darkgrey</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[90m"</span>
+        <span class="tok-n">lightred</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[91m"</span>
+        <span class="tok-n">lightgreen</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[92m"</span>
+        <span class="tok-n">yellow</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[93m"</span>
+        <span class="tok-n">lightblue</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[94m"</span>
+        <span class="tok-n">pink</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[95m"</span>
+        <span class="tok-n">lightcyan</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[96m"</span>
 
-    class bg:
-        black = "\033[40m"
-        red = "\033[41m"
-        green = "\033[42m"
-        orange = "\033[43m"
-        blue = "\033[44m"
-        purple = "\033[45m"
-        cyan = "\033[46m"
-        lightgrey = "\033[47m"</code></pre>
+    <span class="tok-k">class</span> <span class="tok-nc">bg</span><span class="tok-p">:</span>
+        <span class="tok-n">black</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[40m"</span>
+        <span class="tok-n">red</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[41m"</span>
+        <span class="tok-n">green</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[42m"</span>
+        <span class="tok-n">orange</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[43m"</span>
+        <span class="tok-n">blue</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[44m"</span>
+        <span class="tok-n">purple</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[45m"</span>
+        <span class="tok-n">cyan</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[46m"</span>
+        <span class="tok-n">lightgrey</span> <span class="tok-o">=</span> <span class="tok-s2">"</span><span class="tok-se">\033</span><span class="tok-s2">[47m"</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-18__" class="paragraph">
-<p>We can try to read a <code>database.json</code> (the file where we save our address
-book) and return an empty dictionary if the file is empty or doesn’t
-exist. The reason we use <code>json</code> is because the <code>json.load</code> method
-dynamicaly evaluates whatever data is passed to it. This way we can load
-a dictionary and not the raw bytes of the file.</p>
+<div class="paragraph">
+<p>We can try to read a <code>database.json</code> (the file where we save our address book) and return an empty dictionary if the file is empty or doesn’t exist. The reason we use <code>json</code> is because the <code>json.load</code> method dynamicaly evaluates whatever data is passed to it. This way we can load a dictionary and not the raw bytes of the file.</p>
 </div>
-<div id="__asciidoctor-preview-19__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-20__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">try:
-    data = open("database.json", "r")
-    information = json.load(data)
-    data.close()
-except:
-    information = {}</code></pre>
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">try</span><span class="tok-p">:</span>
+    <span class="tok-n">data</span> <span class="tok-o">=</span> <span class="tok-nb">open</span><span class="tok-p">(</span><span class="tok-s2">"database.json"</span><span class="tok-p">,</span> <span class="tok-s2">"r"</span><span class="tok-p">)</span>
+    <span class="tok-n">information</span> <span class="tok-o">=</span> <span class="tok-n">json</span><span class="tok-o">.</span><span class="tok-n">load</span><span class="tok-p">(</span><span class="tok-n">data</span><span class="tok-p">)</span>
+    <span class="tok-n">data</span><span class="tok-o">.</span><span class="tok-n">close</span><span class="tok-p">()</span>
+<span class="tok-k">except</span><span class="tok-p">:</span>
+    <span class="tok-n">information</span> <span class="tok-o">=</span> <span class="tok-p">{}</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-21__" class="paragraph">
-<p>Finally, we can start the actual menu (this will be called in an
-initialization loop later):</p>
+<div class="paragraph">
+<p>Finally, we can start the actual menu (this will be called in an initialization loop later):</p>
 </div>
-<div id="__asciidoctor-preview-22__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-23__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def welcome():
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">welcome</span><span class="tok-p">():</span>
 
-    clear()
+    <span class="tok-n">clear</span><span class="tok-p">()</span>
 
-    type(
-        format.bold
-        + format.underline
-        + "\nWelcome to a brand new address book!\n\n"
-        + format.reset
-    )
+    <span class="tok-nb">type</span><span class="tok-p">(</span>
+        <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">bold</span>
+        <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">underline</span>
+        <span class="tok-o">+</span> <span class="tok-s2">"</span><span class="tok-se">\n</span><span class="tok-s2">Welcome to a brand new address book!</span><span class="tok-se">\n\n</span><span class="tok-s2">"</span>
+        <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span>
+    <span class="tok-p">)</span>
 
-    type("Here is the menu:")
-    type(format.fg.green + "1. " + format.reset + "View the address book")
-    type(format.fg.green + "2. " + format.reset + "Insert a new entry")
-    type(format.fg.green + "3. " + format.reset + "Delete an entry")
-    type(format.fg.green + "4. " + format.reset + "Edit an entry")
-    type(format.fg.green + "5. " + format.reset + "Quit the program\n")
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"Here is the menu:"</span><span class="tok-p">)</span>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"1. "</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-s2">"View the address book"</span><span class="tok-p">)</span>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"2. "</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-s2">"Insert a new entry"</span><span class="tok-p">)</span>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"3. "</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-s2">"Delete an entry"</span><span class="tok-p">)</span>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"4. "</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-s2">"Edit an entry"</span><span class="tok-p">)</span>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"5. "</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-s2">"Quit the program</span><span class="tok-se">\n</span><span class="tok-s2">"</span><span class="tok-p">)</span>
 
-    type("Choose an option:")</code></pre>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"Choose an option:"</span><span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-24__" class="paragraph">
-<p>A save function can be created to save our changes to the address book.
-The file is opened as <code>write-only</code> to make sure we overwrite old data
-and not just append.</p>
+<div class="paragraph">
+<p>A save function can be created to save our changes to the address book. The file is opened as <code>write-only</code> to make sure we overwrite old data and not just append.</p>
 </div>
-<div id="__asciidoctor-preview-25__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-26__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def save():
-    try:
-        data = open("database.json", "w")
-        json.dump(information, data)
-        data.close()
-    except:
-        type(
-            format.fg.red
-            + "Saving your changes failed in the background! Make sure a file called "
-            + format.reset + format.fg.yellow
-            + "database.json "
-            + format.reset + format.fg.red
-            + "exists in the same directory as the main program."
-            + format.reset
-        )</code></pre>
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">save</span><span class="tok-p">():</span>
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-n">data</span> <span class="tok-o">=</span> <span class="tok-nb">open</span><span class="tok-p">(</span><span class="tok-s2">"database.json"</span><span class="tok-p">,</span> <span class="tok-s2">"w"</span><span class="tok-p">)</span>
+        <span class="tok-n">json</span><span class="tok-o">.</span><span class="tok-n">dump</span><span class="tok-p">(</span><span class="tok-n">information</span><span class="tok-p">,</span> <span class="tok-n">data</span><span class="tok-p">)</span>
+        <span class="tok-n">data</span><span class="tok-o">.</span><span class="tok-n">close</span><span class="tok-p">()</span>
+    <span class="tok-k">except</span><span class="tok-p">:</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span>
+            <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span>
+            <span class="tok-o">+</span> <span class="tok-s2">"Saving your changes failed in the background! Make sure a file called "</span>
+            <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">yellow</span>
+            <span class="tok-o">+</span> <span class="tok-s2">"database.json "</span>
+            <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span>
+            <span class="tok-o">+</span> <span class="tok-s2">"exists in the same directory as the main program."</span>
+            <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span>
+        <span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-27__" class="paragraph">
+<div class="paragraph">
 <p>And also create a function to nicely print the dictionary:</p>
 </div>
-<div id="__asciidoctor-preview-28__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-29__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def nicePrint():
-    for name, address in information.items():
-        num = list(information.keys()).index(name)  # gets index of
-        type(                                       # key by converting
-            str(                                    # to list, horrible way
-                format.fg.green                     # do this.
-                + str(num + 1)
-                + ". "
-                + format.reset
-                + name
-                + " : "
-                + address
-            )
-        )</code></pre>
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">nicePrint</span><span class="tok-p">():</span>
+    <span class="tok-k">for</span> <span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-n">address</span> <span class="tok-ow">in</span> <span class="tok-n">information</span><span class="tok-o">.</span><span class="tok-n">items</span><span class="tok-p">():</span>
+        <span class="tok-n">num</span> <span class="tok-o">=</span> <span class="tok-nb">list</span><span class="tok-p">(</span><span class="tok-n">information</span><span class="tok-o">.</span><span class="tok-n">keys</span><span class="tok-p">())</span><span class="tok-o">.</span><span class="tok-n">index</span><span class="tok-p">(</span><span class="tok-n">name</span><span class="tok-p">)</span>  <span class="tok-c1"># gets index of</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span>                                       <span class="tok-c1"># key by converting</span>
+            <span class="tok-nb">str</span><span class="tok-p">(</span>                                    <span class="tok-c1"># to list, horrible way</span>
+                <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span>                     <span class="tok-c1"># do this.</span>
+                <span class="tok-o">+</span> <span class="tok-nb">str</span><span class="tok-p">(</span><span class="tok-n">num</span> <span class="tok-o">+</span> <span class="tok-mi">1</span><span class="tok-p">)</span>
+                <span class="tok-o">+</span> <span class="tok-s2">". "</span>
+                <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span>
+                <span class="tok-o">+</span> <span class="tok-n">name</span>
+                <span class="tok-o">+</span> <span class="tok-s2">" : "</span>
+                <span class="tok-o">+</span> <span class="tok-n">address</span>
+            <span class="tok-p">)</span>
+        <span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-30__" class="paragraph">
-<p>At last, we start coding our options. First option 1, which lets you
-view the database:</p>
+<div class="paragraph">
+<p>At last, we start coding our options. First option 1, which lets you view the database:</p>
 </div>
-<div id="__asciidoctor-preview-31__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-32__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def option1():
-    if len(information) == 0:
-        type(
-            format.fg.red
-            + "The address book is empty. Populate it with data first!"
-            + format.reset
-        )
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">option1</span><span class="tok-p">():</span>
+    <span class="tok-k">if</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-n">information</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">0</span><span class="tok-p">:</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span>
+            <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span>
+            <span class="tok-o">+</span> <span class="tok-s2">"The address book is empty. Populate it with data first!"</span>
+            <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span>
+        <span class="tok-p">)</span>
 
-    else:
-        nicePrint()</code></pre>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-n">nicePrint</span><span class="tok-p">()</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-33__" class="paragraph">
-<p>Then option 2 to add an entry. First it checks if the student already
-exists and then adds it if it doesn’t. It then runs <code>save()</code> to save
-your changes automatically. Because we are dealing with an external
-file, there is a general exception to catch errors.</p>
+<div class="paragraph">
+<p>Then option 2 to add an entry. First it checks if the student already exists and then adds it if it doesn’t. It then runs <code>save()</code> to save your changes automatically. Because we are dealing with an external file, there is a general exception to catch errors.</p>
 </div>
-<div id="__asciidoctor-preview-34__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-35__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def option2():
-    type("What is the new student's name?")
-    studentname = input("&gt; ")
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">option2</span><span class="tok-p">():</span>
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"What is the new student's name?"</span><span class="tok-p">)</span>
+    <span class="tok-n">studentname</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
 
-    type("What is the new student's address?")
-    address = input("&gt; ")
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"What is the new student's address?"</span><span class="tok-p">)</span>
+    <span class="tok-n">address</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
 
-    try:
-        if studentname in information.keys():
-            print(format.fg.red + "That student already exists!" + format.reset)
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-k">if</span> <span class="tok-n">studentname</span> <span class="tok-ow">in</span> <span class="tok-n">information</span><span class="tok-o">.</span><span class="tok-n">keys</span><span class="tok-p">():</span>
+            <span class="tok-nb">print</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span> <span class="tok-o">+</span> <span class="tok-s2">"That student already exists!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span><span class="tok-p">)</span>
 
-        else:
-            information[studentname] = address
-            save()
-            print(
-                format.fg.green + "The student was successfully added!" + format.reset
-            )
-    except:
-        print(
-            format.fg.red
-            + "An unknown error occurred. Please try again later."
-            + format.reset
-        )</code></pre>
+        <span class="tok-k">else</span><span class="tok-p">:</span>
+            <span class="tok-n">information</span><span class="tok-p">[</span><span class="tok-n">studentname</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-n">address</span>
+            <span class="tok-n">save</span><span class="tok-p">()</span>
+            <span class="tok-nb">print</span><span class="tok-p">(</span>
+                <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"The student was successfully added!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span>
+            <span class="tok-p">)</span>
+    <span class="tok-k">except</span><span class="tok-p">:</span>
+        <span class="tok-nb">print</span><span class="tok-p">(</span>
+            <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span>
+            <span class="tok-o">+</span> <span class="tok-s2">"An unknown error occurred. Please try again later."</span>
+            <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span>
+        <span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-36__" class="paragraph">
-<p>We can also give the user the option to remove an entry. Nothing special
-in this:</p>
+<div class="paragraph">
+<p>We can also give the user the option to remove an entry. Nothing special in this:</p>
 </div>
-<div id="__asciidoctor-preview-37__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-38__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def option3():
-    nicePrint()
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">option3</span><span class="tok-p">():</span>
+    <span class="tok-n">nicePrint</span><span class="tok-p">()</span>
 
-    type("\n\nType the name of the student you would like to remove:")
-    studentname = input("&gt; ")
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"</span><span class="tok-se">\n\n</span><span class="tok-s2">Type the name of the student you would like to remove:"</span><span class="tok-p">)</span>
+    <span class="tok-n">studentname</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
 
-    try:
-        del information[studentname]
-        save()
-        type(format.fg.green + "The student was successfully removed!" + format.reset)
-    except:
-        type(format.fg.red + "That student doesn't exist!" + format.reset)</code></pre>
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-k">del</span> <span class="tok-n">information</span><span class="tok-p">[</span><span class="tok-n">studentname</span><span class="tok-p">]</span>
+        <span class="tok-n">save</span><span class="tok-p">()</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"The student was successfully removed!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span><span class="tok-p">)</span>
+    <span class="tok-k">except</span><span class="tok-p">:</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span> <span class="tok-o">+</span> <span class="tok-s2">"That student doesn't exist!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span><span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-39__" class="paragraph">
-<p>Option 4 is for editing the data that is already in the dictionary. It
-is the same code as adding a student but with a different UI. It also
-checks if the student doesn’t exist.</p>
+<div class="paragraph">
+<p>Option 4 is for editing the data that is already in the dictionary. It is the same code as adding a student but with a different UI. It also checks if the student doesn’t exist.</p>
 </div>
-<div id="__asciidoctor-preview-40__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-41__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def option4():
-    nicePrint()
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">option4</span><span class="tok-p">():</span>
+    <span class="tok-n">nicePrint</span><span class="tok-p">()</span>
 
-    type("\n\nType the name of the student you would like to edit:")
-    studentname = input("&gt; ")
+    <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"</span><span class="tok-se">\n\n</span><span class="tok-s2">Type the name of the student you would like to edit:"</span><span class="tok-p">)</span>
+    <span class="tok-n">studentname</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
 
-    if studentname in information.keys():
-        type("\n\nType the new address:")
-        newAddress = input("&gt; ")
-        information[studentname] = newAddress
-        save()
-        type(format.fg.green + "The student was successfully edited!" + format.reset)
-    else:
-        type(format.fg.red + "That student doesn't exist!" + format.reset)</code></pre>
+    <span class="tok-k">if</span> <span class="tok-n">studentname</span> <span class="tok-ow">in</span> <span class="tok-n">information</span><span class="tok-o">.</span><span class="tok-n">keys</span><span class="tok-p">():</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"</span><span class="tok-se">\n\n</span><span class="tok-s2">Type the new address:"</span><span class="tok-p">)</span>
+        <span class="tok-n">newAddress</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
+        <span class="tok-n">information</span><span class="tok-p">[</span><span class="tok-n">studentname</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-n">newAddress</span>
+        <span class="tok-n">save</span><span class="tok-p">()</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">green</span> <span class="tok-o">+</span> <span class="tok-s2">"The student was successfully edited!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span><span class="tok-p">)</span>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span> <span class="tok-o">+</span> <span class="tok-s2">"That student doesn't exist!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span><span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-42__" class="paragraph">
-<p>The last function we define is one to send the user back to the main
-menu at the end of the loop. If the user chooses not to return, then the
-program waits 5 seconds and prompts them again.</p>
+<div class="paragraph">
+<p>The last function we define is one to send the user back to the main menu at the end of the loop. If the user chooses not to return, then the program waits 5 seconds and prompts them again.</p>
 </div>
-<div id="__asciidoctor-preview-43__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-44__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">def returnMenu():
-    while True:
-        type("\n\nWould you like to go back to the main menu? (y/n)")
-        choice = input("&gt; ")
-        choice = choice.lower()
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">returnMenu</span><span class="tok-p">():</span>
+    <span class="tok-k">while</span> <span class="tok-kc">True</span><span class="tok-p">:</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-s2">"</span><span class="tok-se">\n\n</span><span class="tok-s2">Would you like to go back to the main menu? (y/n)"</span><span class="tok-p">)</span>
+        <span class="tok-n">choice</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
+        <span class="tok-n">choice</span> <span class="tok-o">=</span> <span class="tok-n">choice</span><span class="tok-o">.</span><span class="tok-n">lower</span><span class="tok-p">()</span>
 
-        if choice == "y":
-            print("\n\n")
-            clear()
-            break
-        else:
-            sleep(5)
-            continue</code></pre>
+        <span class="tok-k">if</span> <span class="tok-n">choice</span> <span class="tok-o">==</span> <span class="tok-s2">"y"</span><span class="tok-p">:</span>
+            <span class="tok-nb">print</span><span class="tok-p">(</span><span class="tok-s2">"</span><span class="tok-se">\n\n</span><span class="tok-s2">"</span><span class="tok-p">)</span>
+            <span class="tok-n">clear</span><span class="tok-p">()</span>
+            <span class="tok-k">break</span>
+        <span class="tok-k">else</span><span class="tok-p">:</span>
+            <span class="tok-n">sleep</span><span class="tok-p">(</span><span class="tok-mi">5</span><span class="tok-p">)</span>
+            <span class="tok-k">continue</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-45__" class="paragraph">
+<div class="paragraph">
 <p>Finally, the last part of the code is the initialization loop.</p>
 </div>
-<div id="__asciidoctor-preview-46__" class="paragraph">
-
-</div>
-<div id="__asciidoctor-preview-47__" class="listingblock">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="ipython3" class="language-ipython3 hljs">while True:
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">while</span> <span class="tok-kc">True</span><span class="tok-p">:</span>
 
-    welcome()
-    welcomeMenu = input("&gt; ")
-    clear()
-    if welcomeMenu == "1":
+    <span class="tok-n">welcome</span><span class="tok-p">()</span>
+    <span class="tok-n">welcomeMenu</span> <span class="tok-o">=</span> <span class="tok-nb">input</span><span class="tok-p">(</span><span class="tok-s2">"&gt; "</span><span class="tok-p">)</span>
+    <span class="tok-n">clear</span><span class="tok-p">()</span>
+    <span class="tok-k">if</span> <span class="tok-n">welcomeMenu</span> <span class="tok-o">==</span> <span class="tok-s2">"1"</span><span class="tok-p">:</span>
 
-        option1()
+        <span class="tok-n">option1</span><span class="tok-p">()</span>
 
-        returnMenu()
-        continue
+        <span class="tok-n">returnMenu</span><span class="tok-p">()</span>
+        <span class="tok-k">continue</span>
 
-    elif welcomeMenu == "2":
+    <span class="tok-k">elif</span> <span class="tok-n">welcomeMenu</span> <span class="tok-o">==</span> <span class="tok-s2">"2"</span><span class="tok-p">:</span>
 
-        option2()
+        <span class="tok-n">option2</span><span class="tok-p">()</span>
 
-        returnMenu()
-        continue
+        <span class="tok-n">returnMenu</span><span class="tok-p">()</span>
+        <span class="tok-k">continue</span>
 
-    elif welcomeMenu == "3":
+    <span class="tok-k">elif</span> <span class="tok-n">welcomeMenu</span> <span class="tok-o">==</span> <span class="tok-s2">"3"</span><span class="tok-p">:</span>
 
-        option3()
+        <span class="tok-n">option3</span><span class="tok-p">()</span>
 
-        returnMenu()
-        continue
+        <span class="tok-n">returnMenu</span><span class="tok-p">()</span>
+        <span class="tok-k">continue</span>
 
-    elif welcomeMenu == "4":
+    <span class="tok-k">elif</span> <span class="tok-n">welcomeMenu</span> <span class="tok-o">==</span> <span class="tok-s2">"4"</span><span class="tok-p">:</span>
 
-        option4()
+        <span class="tok-n">option4</span><span class="tok-p">()</span>
 
-        returnMenu()
-        continue
+        <span class="tok-n">returnMenu</span><span class="tok-p">()</span>
+        <span class="tok-k">continue</span>
 
-    elif welcomeMenu == "5":
+    <span class="tok-k">elif</span> <span class="tok-n">welcomeMenu</span> <span class="tok-o">==</span> <span class="tok-s2">"5"</span><span class="tok-p">:</span>
 
-        break
+        <span class="tok-k">break</span>
 
-    else:
-        type(format.fg.red + "Thats not an option!" + format.reset)
-        sleep(5)</code></pre>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">fg</span><span class="tok-o">.</span><span class="tok-n">red</span> <span class="tok-o">+</span> <span class="tok-s2">"Thats not an option!"</span> <span class="tok-o">+</span> <span class="tok-nb">format</span><span class="tok-o">.</span><span class="tok-n">reset</span><span class="tok-p">)</span>
+        <span class="tok-n">sleep</span><span class="tok-p">(</span><span class="tok-mi">5</span><span class="tok-p">)</span></code></pre>
 </div>
 </div>
-<div id="__asciidoctor-preview-48__" class="paragraph">
+<div class="paragraph">
 <p>I hope you enjoyed the program!</p>
 </div>
 </div>
-</div>
-</div>
-        </div>
-      </div>
-    </body>
-  </html>
+
+
+</body></html>
