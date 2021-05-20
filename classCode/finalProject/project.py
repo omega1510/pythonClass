@@ -2,6 +2,7 @@
 
 from os import system, name  # for screen clearing
 from time import sleep  # for typewriter effect
+from IPython.display import clear_output  # to work in Jupyter
 import json  # for saving the address book
 
 
@@ -20,6 +21,8 @@ def clear():  # cleares the screen
 
     else:
         _ = system("clear")
+
+    clear_output(wait=True)  # for Jupyter, returns nothing in python@3.9
 
 
 class format:  # class for colorized output
@@ -59,7 +62,7 @@ class format:  # class for colorized output
         lightgrey = "\033[47m"
 
 
-try:  # tries to save data
+try:  # tries to read data
     data = open("database.json", "r")
     information = json.load(data)
     data.close()
@@ -68,6 +71,15 @@ except:  # returns empty dict if database.json is empty or fails read
 
 
 def welcome():  # main menu
+
+    clear()
+
+    type(
+        format.bold
+        + format.underline
+        + "\nWelcome to a brand new address book!\n\n"
+        + format.reset
+    )
 
     type("Here is the menu:")
     type(format.fg.green + "1. " + format.reset + "View the address book")
@@ -98,12 +110,12 @@ def save():  # function to save the address book
         )
 
 
-def nicePrint():  # nicely prints menu
+def nicePrint():
     for name, address in information.items():
-        num = list(information.keys()).index(name)  # gets index of key
-        type(
-            str(
-                format.fg.green
+        num = list(information.keys()).index(name)  # gets index of
+        type(  # key by converting
+            str(  # to list, horrible way
+                format.fg.green  # do this.
                 + str(num + 1)
                 + ". "
                 + format.reset
@@ -133,14 +145,11 @@ def option2():  # add a new entry
     type("What is the new student's address?")
     address = input("> ")
 
-    saved = True
-
     try:
         if studentname in information.keys():
             print(format.fg.red + "That student already exists!" + format.reset)
-            saved = False
 
-        if saved == True:
+        else:
             information[studentname] = address
             save()
             print(
@@ -168,7 +177,7 @@ def option3():  # remove an entry
         type(format.fg.red + "That student doesn't exist!" + format.reset)
 
 
-def option4():
+def option4():  # edit an entry, uses much of the code from adding a student
     nicePrint()
 
     type("\n\nType the name of the student you would like to edit:")
@@ -200,14 +209,6 @@ def returnMenu():  # return to the main menu with cooldown
 
 
 while True:  # init loop
-    clear()
-
-    type(
-        format.bold
-        + format.underline
-        + "\nWelcome to a brand new address book!\n"
-        + format.reset
-    )
 
     welcome()
     welcomeMenu = input("> ")
@@ -242,8 +243,10 @@ while True:  # init loop
 
     elif welcomeMenu == "5":
 
-        exit()
+        break
 
     else:
         type(format.fg.red + "Thats not an option!" + format.reset)
         sleep(5)
+
+    type(format.fg.green + "Have a good day!" + format.reset)
